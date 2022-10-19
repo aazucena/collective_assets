@@ -142,7 +142,6 @@
   </div>
 </template>
 <script>
-  import p5 from 'p5'
   export default (props, { $f7, $update }) => {
     // Login screen demo data
     let username = '';
