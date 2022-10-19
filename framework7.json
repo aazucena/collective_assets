@@ -1,0 +1,32 @@
+{
+  "cwd": "C:\\Users\\Amelia\\Documents\\University\\8 - Fall 2022\\NMED 3630\\Assignments\\1",
+  "type": [
+    "cordova"
+  ],
+  "name": "Collective Assets",
+  "framework": "core",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": "scss",
+  "theming": {
+    "customColor": true,
+    "color": "#4558ba",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.collectiveassets",
+  "cordova": {
+    "folder": "cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": [
+      "cordova-plugin-statusbar",
+      "cordova-plugin-keyboard",
+      "cordova-plugin-splashscreen"
+    ]
+  }
+}
