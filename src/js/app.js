@@ -16,7 +16,7 @@ import routes from './routes.js';
 import store from './store.js';
 
 // Import main app component
-import App from '../app.f7';
+import App from '../app.f7.html';
 
 var device = getDevice();
 var app = new Framework7({

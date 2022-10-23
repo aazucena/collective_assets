@@ -4,9 +4,14 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
+    '@storybook/addon-a11y',
+    '@storybook/addon-console',
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
+    '@storybook/addon-storysource',
+    "storybook-addon-designs",
+    'storybook-dark-mode'
   ],
   "framework": "@storybook/html",
   "core": {

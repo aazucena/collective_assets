@@ -75,17 +75,16 @@ class GamblingSystem {
         return result
     }
     rollOne = () => {
-        console.log(this.roll(), this.tally.total)
+        var roll = [this.roll()]
+        return roll
     }
     rollTen = () => {
-        for (var i = 0; i < 10; i++) {
-            console.log(this.roll(), this.tally.total)
-        }
+        var rolls = new Array(10).fill(null).map((_, index) => this.roll())
+        return rolls
     }
     rollMultiple = (limit = 2) => {
-        for (var i = 0; i < limit; i++) {
-            console.log(this.roll(), this.tally.total)
-        }
+        var rolls = new Array(limit).fill(null).map((_, index) => this.roll())
+        return rolls
     }
     getHistory = () => {
         console.log(this.history)

@@ -31,6 +31,10 @@
     "Samsung >= 12"
   ],
   "dependencies": {
+    "@storybook/addon-a11y": "^6.5.12",
+    "@storybook/addon-controls": "^6.5.12",
+    "@storybook/addon-storyshots": "^6.5.12",
+    "@storybook/addon-storysource": "^6.5.12",
     "axios": "^1.1.3",
     "big.js": "^6.2.1",
     "dom7": "^4.0.4",
@@ -40,6 +44,8 @@
     "material-icons": "^1.12.0",
     "p5": "^1.5.0",
     "skeleton-elements": "^4.0.1",
+    "storybook-addon-designs": "^6.3.1",
+    "storybook-dark-mode": "^1.1.2",
     "swiper": "^8.4.4"
   },
   "devDependencies": {
