@@ -19,8 +19,11 @@
   border-radius: 50% !important
 }
 
-.nav-bg.transparent {
+.navbar-bg.transparent {
   background-color: transparent !important;
+}
+.navbar.color-white {
+  --f7-navbar-text-color: white !important;
 }
 
 .icon-button {

@@ -6,7 +6,6 @@
 </template>
 <style>
     .p5-container {
-        position: absolute !important;
         display: flex !important;
         flex-direction: row !important;
         flex: 1 1 auto;
@@ -14,6 +13,10 @@
         height: auto !important;
         justify-content: center !important;
         overflow: hidden !important;
+    }
+    canvas .p5Canvas {
+        position: relative;
+        z-index: -3 !important;
     }
 </style>
 <script>
