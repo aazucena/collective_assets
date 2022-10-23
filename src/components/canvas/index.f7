@@ -1,24 +1,28 @@
 <template>
-    <div class="block">
+    <div>
         <div id=${key} class="p5-container ${className}">
         </div>
     </div>
 </template>
 <style>
     .p5-container {
+        position: absolute !important;
         display: flex !important;
         flex-direction: row !important;
         flex: 1 1 auto;
         max-width: 100% !important;
         height: auto !important;
         justify-content: center !important;
+        overflow: hidden !important;
     }
 </style>
 <script>
-    import p5 from 'p5'
+    import p5 from 'p5/lib/p5.min.js'
+    // import p5Sound from 'p5/lib/addons/p5.sound.min.js'
     export default (props, { $f7, $update }) => {
         if (typeof window !== "undefined") {
             window.p5 = p5
+            // window.p5Sound = p5Sound
         }
         const className = props.class ?? ""
         const key = props.key ?? 'sketch' 
