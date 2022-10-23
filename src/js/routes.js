@@ -1,14 +1,14 @@
 
-import HomePage from '../pages/home.f7.html';
-import AboutPage from '../pages/about.f7.html';
-import FormPage from '../pages/form.f7.html';
-import CatalogPage from '../pages/catalog.f7.html';
-import ProductPage from '../pages/product.f7.html';
-import SettingsPage from '../pages/settings.f7.html';
+import HomePage from '../pages/home.f7';
+import AboutPage from '../pages/about.f7';
+import FormPage from '../pages/form.f7';
+import CatalogPage from '../pages/catalog.f7';
+import ProductPage from '../pages/product.f7';
+import SettingsPage from '../pages/settings.f7';
 
-import DynamicRoutePage from '../pages/dynamic-route.f7.html';
-import RequestAndLoad from '../pages/request-and-load.f7.html';
-import NotFoundPage from '../pages/404.f7.html';
+import DynamicRoutePage from '../pages/dynamic-route.f7';
+import RequestAndLoad from '../pages/request-and-load.f7';
+import NotFoundPage from '../pages/404.f7';
 
 var routes = [
   {
