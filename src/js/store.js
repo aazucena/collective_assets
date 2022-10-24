@@ -1,5 +1,5 @@
 
-import { createStore } from 'framework7';
+import { createStore } from 'framework7'
 
 const store = createStore({
   state: {
