@@ -46,3 +46,103 @@
     } 
   }
 }
+.navbar-inner.vertical {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  justify-content: flex-start !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  flex-grow: 1 !important;
+  max-width: 100%;
+  align-items: flex-end !important;
+  &.bottom {
+    justify-content: flex-end !important;
+  }
+  &.top {
+    justify-content: flex-start !important;
+  }
+  &.center-left {
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+  &.center-right {
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+  &.center {
+    justify-content: center !important;
+  }
+  &.left {
+    align-items: flex-start !important;
+  }
+  &.right {
+    align-items: flex-start !important;
+  }
+  &.bottom-left {
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+  }
+  &.top-left {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  &.top-right {
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+  }
+  &.bottom-right {
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+  }
+}
+
+.navbar.vertical {
+  z-index: 20 !important;
+  height: 100%;
+  display: flex !important;
+  flex: 1 1 auto !important;
+  justify-content: flex-start !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  flex-grow: 0 !important;
+}
+
+.navbar-inner.vertical > .link  {
+  padding: .5rem !important;
+}
+
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: $i * 1% !important;
+  }
+  .h-#{$i} {
+    height: $i * 1% !important;
+  }
+  .max-w-#{$i} {
+    max-width: $i * 1% !important;
+  }
+  .max-h-#{$i} {
+    max-height: $i * 1% !important;
+  }
+  .min-w-#{$i} {
+    min-width: $i * 1% !important;
+  }
+  .min-h-#{$i} {
+    min-height: $i * 1% !important;
+  }
+  .vw-#{$i} {
+    width: $i * 1vw !important;
+  }
+  .vh-#{$i} {
+    width: $i * 1vh !important;
+  }
+}
+.w-auto {
+  width: auto !important;
+}
+.h-auto {
+  height: auto !important;
+}
+.w-initial {
+  width: initial !important;
+}

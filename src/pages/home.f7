@@ -1,15 +1,9 @@
 <template>
   <div class="page" data-name="home">
     <!-- Top Navbar -->
-    <div class="navbar color-white">
+    <div class="navbar color-white no-shadow">
       <div class="navbar-bg transparent"></div>
       <div class="navbar-inner color-white">
-        <div class="left">
-          <a href="#" class="link icon-only panel-open" data-panel="left">
-            <i class="icon f7-icons if-not-md">menu</i>
-            <i class="icon material-icons if-md">menu</i>
-          </a>
-        </div>
         <div class="title color-white">
           <div class="title-text color-white">Collective Assets</div>
         </div>
@@ -19,6 +13,13 @@
     <!-- Scrollable page content-->
     <div class="page-content no-padding-top">
       <${Sketch} key="sketch" sketch=${sketch}/>
+      <div class="w-100 h-100 display-flex flex-direction-column justify-content-end align-items-end">
+        <div class="w-100 display-flex flex-direction-row justify-content-center">
+          <button type="button" class="button button-circle button-large button-fill icon-button w-intial">
+            <i class="icon f7-icons color-yellow">bitcoin</i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

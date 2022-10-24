@@ -14,8 +14,8 @@
         justify-content: center !important;
         overflow: hidden !important;
     }
-    canvas .p5Canvas {
-        position: relative;
+    canvas.p5Canvas {
+        position: fixed !important;
         z-index: -3 !important;
     }
 </style>

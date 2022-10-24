@@ -14,15 +14,15 @@ export default (p5) => {
       p5.createCanvas(vw, vh)
     }
     p5.draw = () => {  
-      p5.background(0);
-      p5.ellipse(x, y, r*2, r*2);
-      x += xspeed;
-      y += yspeed;
+      p5.background(69, 88, 186)
+      p5.ellipse(x, y, r*2, r*2)
+      x += xspeed
+      y += yspeed
       if (x > p5.width - r || x < r) {
-        xspeed = -xspeed;
+        xspeed = -xspeed
       }
       if (y > p5.height - r || y < r) {
-        yspeed = -yspeed;
+        yspeed = -yspeed
       }
     }
     p5.windowResized = () => {
