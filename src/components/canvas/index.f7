@@ -15,7 +15,7 @@
         overflow: hidden !important;
     }
     canvas.p5Canvas {
-        position: fixed !important;
+        /* position: fixed !important; */
         z-index: -3 !important;
     }
 </style>
