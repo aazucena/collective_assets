@@ -41,6 +41,7 @@
     "dom7": "^4.0.4",
     "framework7": "^7.0.8",
     "framework7-icons": "^5.0.5",
+    "howler": "^2.2.3",
     "lodash": "^4.17.21",
     "material-icons": "^1.12.0",
     "p5": "^1.5.0",
