@@ -5,7 +5,7 @@ var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth |
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
 export default (p5) => {
-
+    let vibHeight = vh + 75, vibrateMod = 0.25
     class ShowLight {
       constructor(props) {
         this.x = props.x 
@@ -38,14 +38,14 @@ export default (p5) => {
       var rgb = new Array(3).fill(0)
       rgb[i % 3] = 255
       return new ShowLight({
-        x: vw/2 + (100 * p5.random(0, (i % 6))), 
-        y: vh/2 + 400 + (100 * (i % 6)), 
+        x: vw/2 + (100 * p5.random(0, (i % 8))), 
+        y: vh/2 + 400 + (50 * (i % 4)), 
         pivot: { x: 600, y: 460 }, 
         angle: (i*45) % 90, 
         speed: 0.0015,
         maxAngle: 90, 
         radius: 500, 
-        color: p5.color(...rgb, 25), 
+        color: p5.color(...rgb, 12), 
         offset: i + 1,
       })
     })
@@ -74,9 +74,24 @@ export default (p5) => {
       p5.fill(fontColorContrast('#1f203c'))
       p5.text('Collective Assets', p5.width/2, p5.height/2 - 60)
     }
+    const lights = () => {
+      let min = vh + 75
+      let max = min + 30
+      p5.push()
+      p5.fill(255, 255, 0, 50)
+      p5.drawingContext.filter = 'blur(4rem)'
+      p5.ellipseMode(p5.CENTER)
+      p5.ellipse(vw/2, vibHeight, vw + 150, vh/2)
+      p5.pop()
+      console.log(vibHeight, min, max)
+      vibHeight += vibrateMod
+      if (vibHeight >= max || vibHeight <= min)
+        vibrateMod *= -1
+    }
     const city = () => {
       let image = p5.createImg('../assets/images/city.svg', 'city')
       image.style('position', 'initial')
+      image.style('opacity', 0.875)
       let imageContainer = p5.createDiv()
       imageContainer.child(image)
       imageContainer.class('w-100 display-flex flex-direction-row justify-content-center align-items-flex-end')
@@ -92,6 +107,7 @@ export default (p5) => {
       p5.background('#1f203c')
       showLights()
       titleText()
+      lights()
     }
 
     p5.windowResized = () => {
