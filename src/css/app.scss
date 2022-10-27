@@ -11,9 +11,35 @@
   --f7-theme-color-rgb: 69, 88, 186;
   --f7-theme-color-shade: #3a4a9c;
   --f7-theme-color-tint: #6373c5;
+  --f7-color-secondary: #ffff33;
+  --f7-color-secondary-rgb: 255, 255, 51;
+  --f7-color-secondary-shade: #a3a22a;
+  --f7-color-secondary-tint: #ffff85;
 }
 
 /* Your app custom styles here */
+.text-color-secondary {
+  --f7-theme-color-text-color: var(--f7-color-secondary);
+}
+.text-color-secondary {
+  --f7-theme-color-text-color: var(--f7-color-secondary);
+}
+.bg-color-secondary {
+  --f7-theme-color-bg-color: var(--f7-color-secondary);
+}
+.border-color-secondary {
+  --f7-theme-color-border-color: var(--f7-color-secondary);
+}
+.ripple-color-secondary {
+  --f7-theme-color-ripple-color: rgba(var(--f7-color-secondary-rgb), 0.3);
+}
+.color-secondary {
+  --f7-theme-color: var(--f7-color-secondary);
+  --f7-theme-color-rgb: var(--f7-color-secondary-rgb);
+  --f7-theme-color-shade: var(--f7-color-secondary-shade);
+  --f7-theme-color-tint: var(--f7-color-secondary-tint);
+}
+
 .button-circle {
   border-radius: 50% !important
 }
@@ -29,6 +55,10 @@
   width: initial;
   padding-top: 1.375rem !important;
   padding-bottom: 1.375rem !important;
+  &.start-button {
+    width: 87.5px !important;
+    height: 87.5px !important;
+  }
   &.button-small {
     padding-top: 1.125rem !important;
     padding-bottom: 1.125rem !important;
