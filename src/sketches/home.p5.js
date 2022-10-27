@@ -83,7 +83,6 @@ export default (p5) => {
       p5.ellipseMode(p5.CENTER)
       p5.ellipse(vw/2, vibHeight, vw + 150, vh/2)
       p5.pop()
-      console.log(vibHeight, min, max)
       vibHeight += vibrateMod
       if (vibHeight >= max || vibHeight <= min)
         vibrateMod *= -1
