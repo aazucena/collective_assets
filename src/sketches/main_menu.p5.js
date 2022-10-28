@@ -1,5 +1,4 @@
 import fontColorContrast from 'font-color-contrast'
-import sketch from './loading.p5.js'
 
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -187,16 +186,7 @@ export default (p5) => {
     const mainButton = () => {
       let button = p5.createButton('<i class="icon f7-icons">chevron_right</i>')
       button.class('button button-circle button-large color-secondary button-outline icon-button w-initial start-button')
-      button.id('landing-button')
       // button.center('horizontal')
-      button.mousePressed(() => {
-        if (window.f7) {
-          window.f7.views.main.router.navigate(
-            { name: 'loading', path: '/loading/'}, 
-            { transition: 'f7-fade' }
-            )
-        }
-      })
       button.style('position', 'initial')
       let buttonContainer = p5.createDiv()
       buttonContainer.child(button)

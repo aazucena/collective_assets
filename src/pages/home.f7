@@ -1,25 +1,15 @@
 <template>
   <div class="page" data-name="home">
-    <!-- Top Navbar -->
-    <!-- <div class="navbar color-white no-shadow">
-      <div class="navbar-bg transparent"></div>
-      <div class="navbar-inner color-white">
-        <div class="title color-white">
-          <div class="title-text color-white">Collective Assets</div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Scrollable page content-->
     <div class="page-content no-padding-top">
-      <${Sketch} key="sketch" sketch=${sketch}/>
+      <${Sketch} keyID=${key} sketch=${sketch}/>
     </div>
   </div>
 </template>
 <script>
   import Sketch from '@/components/canvas/index.f7'
   import sketch from '@/sketches/home.p5.js'
-  export default () => {
+  export default (props, { $, $f7router, $f7, $store, $on }) => {
+    const key = "home"
     var value = 0
     var mod = 1
     return $render;

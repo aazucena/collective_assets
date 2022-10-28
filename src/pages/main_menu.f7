@@ -1,0 +1,14 @@
+<template>
+    <div class="page" data-name="main_menu">
+        <div class="page-content no-padding-top">
+            test
+        </div>
+    </div>
+</template>
+<script>
+export default () => {
+    var value = 0
+    var mod = 1
+    return $render;
+}
+</script>

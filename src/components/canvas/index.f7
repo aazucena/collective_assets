@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id=${key} class="p5-container ${className}">
+    <div id=${`${key}-container`}>
+        <div id="${key}" class="p5-container ${className}">
         </div>
     </div>
 </template>
@@ -22,22 +22,33 @@
 <script>
     import p5 from 'p5'
     // import p5Sound from 'p5/lib/addons/p5.sound.min.js'
-    export default (props, { $f7, $update }) => {
+    export default (props, { $, $f7, $update, $onMounted, $onBeforeMount, ...options  }) => {
+        console.log(options)
+        $onBeforeMount(() => {
+        $update()
         if (typeof window !== "undefined") {
-            window.p5 = p5
+            if (!window.p5) window.p5 = p5
             // window.p5Sound = p5Sound
         }
+        })
         const className = props.class ?? ""
-        const key = props.key ?? 'sketch' 
+        var key = props.keyid ?? 'sketch' 
+        console.log("🚀 ~ file: index.f7 ~ line 35 ~ key", key)
         var sketchFunction =  (p) => {
             p.setup = () => {
                 p.createCanvas(window.innerWidth, window.innerHeight)
+                p.background('#4558ba')
                 console.log('p5.js setup function executed!')
             }
 
         }
-        const sketch =  props.sketch ?? sketchFunction
-        const instance = new p5(sketch, key) 
+        var sketch =  props.sketch ?? sketchFunction
+        var instance
+        $onMounted(() => {
+            instance = new p5(sketch, key)
+            instance._userNode = key
+            console.log("🚀 ~ file: index.f7 ~ line 49 ~ $onMounted ~ instance", instance)
+        })
         return $render
     }
 </script>

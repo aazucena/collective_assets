@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
-    <div id="view-home" class="view view-main view-init" data-url="/">
+    <div class="view view-main view-init safe-areas" data-url="/">
       <!-- Home page will be loaded here dynamically from / route -->
     </div>
 
@@ -10,7 +10,10 @@
   </div>
 </template>
 <script>
-  export default (props, { $f7, $update }) => {
+  export default (props, { $f7, $update, $on }) => {
+    $on('pageInit', () => {
+      $update()
+    })
     return $render;
   }
 </script>

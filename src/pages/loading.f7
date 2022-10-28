@@ -1,0 +1,20 @@
+<template>
+<div class="page" data-name="loading" aria-hidden="true">
+    <div class="page-content no-padding-top">
+        <${Sketch} keyID=${key} sketch=${sketch}/>
+    </div>
+</div>
+</template>
+<script>
+import Sketch from '@/components/canvas/index.f7'
+import sketch from '@/sketches/loading.p5.js'
+export default (props, { $, $f7router, $f7, $store, $on }) => {
+    var value = 0
+    var mod = 1
+    const key = "loading"
+    $on('pageInit', () => {
+        var instance = new window.p5(sketch, 'loading')
+    })
+    return $render;
+}
+</script>

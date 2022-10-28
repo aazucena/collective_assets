@@ -51,3 +51,5 @@ var app = new Framework7({
     },
   },
 });
+
+window.f7 = app
