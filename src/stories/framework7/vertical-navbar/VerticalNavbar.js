@@ -33,7 +33,6 @@ export const createVerticalNavbar = ({
     items = [],
     position,
 }) => {
-    console.log(items)
     const nav = document.createElement('div')
     const getLinkElement = ({ type, label}) => {
         switch(type) {

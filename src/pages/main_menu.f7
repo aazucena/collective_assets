@@ -6,7 +6,13 @@
     </div>
 </template>
 <script>
-export default () => {
+import jukebox from '../js/utilities/jukebox.js'
+export default (props, { $on }) => {
+    $on('pageInit', () => {
+        var ost = jukebox['main_menu']
+        ost.play()
+        ost.loop(false)
+    })
     var value = 0
     var mod = 1
     return $render;

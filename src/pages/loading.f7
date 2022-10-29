@@ -14,6 +14,11 @@ export default (props, { $, $f7router, $f7, $store, $on }) => {
     const key = "loading"
     $on('pageInit', () => {
         var instance = new window.p5(sketch, 'loading')
+        setTimeout(() => {
+            $f7router.navigate(
+                { name: props.redirectName, path: props.redirectUrl }, 
+            )
+        }, 8 * 1000)
     })
     return $render;
 }
