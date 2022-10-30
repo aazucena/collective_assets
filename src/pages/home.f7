@@ -8,7 +8,12 @@
 <script>
   import Sketch from '@/components/canvas/index.f7'
   import sketch from '@/sketches/home.p5.js'
+  import jukebox from '../js/utilities/jukebox.js'
   export default (props, { $, $f7router, $f7, $store, $on }) => {
+    $on('pageInit', () => {
+        var ost = jukebox['home']
+        ost.play()
+    })
     const key = "home"
     var value = 0
     var mod = 1

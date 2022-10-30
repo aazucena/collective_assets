@@ -16,7 +16,8 @@ export default (props, { $, $f7router, $f7, $store, $on }) => {
         var instance = new window.p5(sketch, 'loading')
         setTimeout(() => {
             $f7router.navigate(
-                { name: props.redirectName, path: props.redirectUrl }, 
+                { name: props.redirectName, path: props.redirectUrl },
+                { transition: 'f7-fade' }
             )
         }, 8 * 1000)
     })

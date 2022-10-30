@@ -6,7 +6,6 @@ import jukebox from '../js/utilities/jukebox.js'
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-var bgOST = jukebox['home']
 
 export default (p5) => {
     let vibHeight = vh + 75, vibrateMod = 0.25, fireworks = [], gravity = p5.createVector(0, 0.2)
@@ -194,7 +193,7 @@ export default (p5) => {
       // button.center('horizontal')
       button.mousePressed(() => {
         if (window.f7) {
-          bgOST.stop()
+          jukebox['home'].stop()
           window.f7.views.main.router.navigate(
             { name: 'loading', path: '/loading/'}, 
             { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
@@ -241,7 +240,6 @@ export default (p5) => {
     p5.setup = () => {
       p5.createCanvas(vw, vh)
       p5.background('#1f203c')
-      bgOST.play()
       mainButton()
       city()
     }

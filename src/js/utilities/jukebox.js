@@ -4,6 +4,7 @@ var tracks = {
     home: new Howl({ 
         src: ['../assets/audio/music/ost/2.wav'],
         volume: 0.25,
+        html5: true,
         onplayerror: (sound) =>  {
             sound.once('unlock', function() {
                 sound.play()

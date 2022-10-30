@@ -1,5 +1,6 @@
 import $ from 'dom7';
 import Framework7, { getDevice } from 'framework7/bundle';
+import p5 from 'p5'
 
 // Import F7 Styles
 import 'framework7/css/bundle';
@@ -52,4 +53,5 @@ var app = new Framework7({
   },
 });
 
+window.p5 = p5
 window.f7 = app

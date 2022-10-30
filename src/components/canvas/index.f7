@@ -20,16 +20,8 @@
     }
 </style>
 <script>
-    import p5 from 'p5'
     // import p5Sound from 'p5/lib/addons/p5.sound.min.js'
     export default (props, { $, $f7, $update, $onMounted, $onBeforeMount, ...options  }) => {
-        $onBeforeMount(() => {
-        $update()
-        if (typeof window !== "undefined") {
-            if (!window.p5) window.p5 = p5
-            // window.p5Sound = p5Sound
-        }
-        })
         const className = props.class ?? ""
         var key = props.keyid ?? 'sketch' 
         var sketchFunction =  (p) => {
@@ -42,7 +34,8 @@
         var sketch =  props.sketch ?? sketchFunction
         var instance
         $onMounted(() => {
-            instance = new p5(sketch, key)
+            instance = new window.p5(sketch, key)
+            console.log("🚀 ~ file: index.f7 ~ line 38 ~ $onMounted ~ instance", instance)
             instance._userNode = key
         })
         return $render
