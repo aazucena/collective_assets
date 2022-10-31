@@ -27,8 +27,13 @@
                     </a>
                 </div>
                 <div class="link-container">
-                    <a href="#" class="display-flex justify-content-center link icon-only">
+                    <a href="/history/" class="display-flex justify-content-center link icon-only">
                         <i class="material-icons">pending_actions</i>
+                    </a>
+                </div>
+                <div class="link-container">
+                    <a href="#" class="display-flex justify-content-center link icon-only" @click=${logout}>
+                        <i class="material-icons">logout</i>
                     </a>
                 </div>
             </div>
@@ -53,6 +58,13 @@ export default (props, { $on, $, $f7router }) => {
     $on('pageBeforeOut', () => {
         ost.stop()
     })
+    const logout = () => {
+        ost.stop()
+        $f7router.navigate(
+            { name: 'loading', path: '/loading/'}, 
+            { transition: 'f7-fade', props: { redirectName: 'home', redirectUrl: '/home/' } }
+        )
+    }
     const toggleMute = () => {
         mute = !mute
         $('#mute').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')

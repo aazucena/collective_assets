@@ -16,6 +16,7 @@
             </div>
         </div>
         <div class="page-content">
+            <div class="block-title color-white">Settings</div>
             <div class="list simple-list">
                 <ul>
                     <li class="w-100 display-flex flex-direction-row justify-content-space-between">
@@ -32,6 +33,9 @@
     </div>
 </template>
 <style>
+    .block-title {
+        color: white;
+    }
     .page-content {
         background-color: #1f203c !important;
     }

@@ -60,7 +60,7 @@
 
 .indicator-container {
   padding: var(--f7-typography-padding) !important;
-  width: 37.5%;
+  width: 25%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -105,6 +105,10 @@
   &.start-button {
     width: 87.5px !important;
     height: 87.5px !important;
+  }
+  &.play-button {
+    width: 235px !important;
+    height: 235px !important;
   }
   &.button-small {
     padding-top: 1.125rem !important;
@@ -234,7 +238,7 @@
 .navbar.vertical {
   z-index: 500 !important;
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex !important;
   justify-content: flex-start !important;
   flex-direction: column !important;
@@ -268,6 +272,9 @@
   .vh-#{$i} {
     width: $i * 1vh !important;
   }
+}
+
+@for $i from 0 through 1000 {
   .level-#{$i} {
     z-index: $i !important;
   }

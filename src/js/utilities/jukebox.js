@@ -15,7 +15,7 @@ var tracks = {
     main_menu: new Howl({ 
         src: ['../assets/audio/music/ost/3.wav'],
         loop: true,
-        volume: 0.25,
+        volume: 0.5,
         onplayerror: (sound) =>  {
             sound.once('unlock', function() {
                 sound.play()
@@ -25,7 +25,7 @@ var tracks = {
     settings: new Howl({ 
         src: ['../assets/audio/music/ost/1.wav'],
         loop: true,
-        volume: 0.25,
+        volume: 0.5,
         onplayerror: (sound) =>  {
             sound.once('unlock', function() {
                 sound.play()
@@ -35,7 +35,7 @@ var tracks = {
     collections: new Howl({ 
         src: ['../assets/audio/music/ost/4.wav'],
         loop: true,
-        volume: 0.25,
+        volume: 0.5,
         onplayerror: (sound) =>  {
             sound.once('unlock', function() {
                 sound.play()

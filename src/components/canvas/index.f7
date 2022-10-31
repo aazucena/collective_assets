@@ -32,11 +32,11 @@
 
         }
         var sketch =  props.sketch ?? sketchFunction
-        var instance
-        $onMounted(() => {
-            instance = new window.p5(sketch, key)
-            instance._userNode = key
-        })
+        // var instance
+        // $onMounted(() => {
+        //     instance = new window.p5(sketch, key)
+        //     instance._userNode = key
+        // })
         return $render
     }
 </script>

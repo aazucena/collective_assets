@@ -52,25 +52,61 @@ export default (p5) => {
       show_light.move()
     })
   }
+  const mainButton = () => {
+    let button = p5.createDiv(`<img src="../assets/images/chests/chest/chest@3x.png" alt="chest" style="max-width: 100%; height: auto;" />`)
+    button.class('button button-circle button-large color-secondary icon-button w-initial play-button level-500')
+    button.id('play-button')
+    // button.center('horizontal')
+    button.mousePressed(() => {
+      if (window.f7) {
+        button.html(`<img src="../assets/images/chests/chest/chest@3x.gif" alt="chest" style="max-width: 100%; height: auto;" />`)
+        // jukebox['menu'].stop()
+        // window.f7.views.main.router.navigate(
+        //   { name: 'loading', path: '/loading/'}, 
+        //   { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
+        //   )
+        var timer = setTimeout(() => {
+          button.html(`<img src="../assets/images/chests/chest/chest@3x.png" alt="chest" style="max-width: 100%; height: auto;" />`)
+          clearTimeout(timer)
+        }, 3000)
+      }
+    })
+    button.style('position', 'initial')
+    let buttonContainer = p5.createDiv()
+    buttonContainer.child(button)
+    buttonContainer.class('w-100 display-flex flex-direction-row justify-content-center')
+    buttonContainer.center()
+    buttonContainer.position(0, p5.height-300)
+  }
   const pokerTable = () => {
     let poker_table = p5.createImg("../assets/images/poker-table.png")
     poker_table.style('max-width', '100%')
     poker_table.style('height', 'auto')
-    poker_table.style('filter', 'sepia(25%) contrast(110%) saturate(60%) brightness(80%) opacity(90%)')
+    poker_table.style('filter', 'sepia(25%) contrast(110%) saturate(60%) brightness(80%) opacity(85%)')
     let imgContainer = p5.createDiv()
     imgContainer.child(poker_table)
     imgContainer.class('w-100 display-flex flex-direction-row justify-content-center')
     imgContainer.center()
     imgContainer.position(0, (p5.height/2))
   }
+  const buttonName = () => {
+    p5.textSize(42)
+    p5.textFont('Poppins', 24)
+    p5.textStyle(p5.BOLD)
+    p5.textAlign(p5.CENTER)
+    p5.fill(fontColorContrast('#1f203c'))
+    p5.text('Click above to play!', p5.width/2, p5.height - 75)
+  }
   p5.setup = () => {
     p5.createCanvas(vw, vh)
     p5.background('#000')
     pokerTable()  
+    mainButton()
   }
   p5.draw = () => {  
     p5.background('#000')
     showLights()
+    buttonName()
   }
   p5.windowResized = () => {
     vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)

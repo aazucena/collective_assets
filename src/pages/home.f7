@@ -11,6 +11,7 @@
   import jukebox from '../js/utilities/jukebox.js'
   export default (props, { $, $f7router, $f7, $store, $on }) => {
     $on('pageInit', () => {
+        var instance = new window.p5(sketch, 'home')
         var ost = jukebox['home']
         ost.play()
     })

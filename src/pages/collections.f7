@@ -16,6 +16,7 @@
             </div>
         </div>
         <div class="page-content">
+            <div class="block-title color-white">Asset Collections</div>
             <div class="grid-layout display-flex justify-content-center">
                 <div class="row w-100">
                     <div class="col-33 resizable display-flex justify-content-center">
@@ -33,6 +34,9 @@
     </div>
 </template>
 <style>
+    .block-title {
+        color: white;
+    }
     .col {
         padding: 1rem;
     }

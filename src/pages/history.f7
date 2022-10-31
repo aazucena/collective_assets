@@ -1,0 +1,51 @@
+<template>
+    <div class="page" data-name="history" aria-hidden="true">
+        <div class="navbar no-shadow">
+            <div class="navbar-bg transparent"></div>
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link" href="/menu/">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="block-title color-white">Collection History</div>
+            <div class="list simple-list">
+                <ul>
+                    <li class="w-100 display-flex flex-direction-row justify-content-space-between">
+                        <div class="display-flex flex-direction-row justify-content-space-evenly">
+                            <div class="padding-right">Rare</div>
+                            <div class="padding-right">Item</div>
+                        </div>
+                        <div>
+                            June 06, 2022
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+    .block-title {
+        color: white;
+    }
+    .page-content {
+        background-color: #1f203c !important;
+    }
+    .simple-list > ul > li {
+        background-color: var(--f7-theme-color) !important;
+        color: white;
+    }
+</style>
+<script>
+    import jukebox from '../js/utilities/jukebox.js'
+    export default (props, { $on, $ }) => {
+        var value = 0
+        var mod = 1
+        var key = 'history'
+        return $render;
+    }
+</script>
