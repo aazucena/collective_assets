@@ -8,6 +8,11 @@
                         <i class="icon icon-back"></i>
                     </a>
                 </div>
+                <div class="right">
+                    <a href="#" class="link icon-only" @click=${toggleMute}>
+                        <i class="f7-icons" id="mute-history">speaker_slash</i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="page-content">
@@ -43,6 +48,20 @@
 <script>
     import jukebox from '../js/utilities/jukebox.js'
     export default (props, { $on, $ }) => {
+        var mute = false
+        var ost = jukebox['collections']
+        $on('pageInit', () => {
+            ost.play()
+            ost.mute(mute)
+        })
+        $on('pageBeforeOut', () => {
+            ost.stop()
+        })
+        const toggleMute = () => {
+            mute = !mute
+            $('#mute-history').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')
+            ost.mute(mute)
+        }
         var value = 0
         var mod = 1
         var key = 'history'

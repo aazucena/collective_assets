@@ -15,7 +15,9 @@
   "devDependencies": {
     "cordova-android": "^10.1.2",
     "cordova-ios": "^6.2.0",
+    "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-keyboard": "^1.2.0",
+    "cordova-plugin-media": "^6.1.0",
     "cordova-plugin-splashscreen": "^6.0.2",
     "cordova-plugin-statusbar": "^3.0.0"
   },
@@ -23,7 +25,8 @@
     "plugins": {
       "cordova-plugin-statusbar": {},
       "cordova-plugin-keyboard": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-media": {}
     },
     "platforms": [
       "ios",

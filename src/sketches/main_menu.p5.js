@@ -1,4 +1,5 @@
 import fontColorContrast from 'font-color-contrast'
+import jukebox from '../js/utilities/jukebox.js'
 
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -60,15 +61,15 @@ export default (p5) => {
     button.mousePressed(() => {
       if (window.f7) {
         button.html(`<img src="../assets/images/chests/chest/chest@3x.gif" alt="chest" style="max-width: 100%; height: auto;" />`)
-        // jukebox['menu'].stop()
-        // window.f7.views.main.router.navigate(
-        //   { name: 'loading', path: '/loading/'}, 
-        //   { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
-        //   )
         var timer = setTimeout(() => {
+          jukebox['main_menu'].stop()
+          window.f7.views.main.router.navigate(
+            { name: 'loading', path: '/loading/'}, 
+            { transition: 'f7-fade', props: { redirectName: 'play', redirectUrl: '/play/' } }
+            )
           button.html(`<img src="../assets/images/chests/chest/chest@3x.png" alt="chest" style="max-width: 100%; height: auto;" />`)
           clearTimeout(timer)
-        }, 3000)
+        }, 2000)
       }
     })
     button.style('position', 'initial')

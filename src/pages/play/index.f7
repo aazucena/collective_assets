@@ -1,0 +1,35 @@
+<template>
+
+    <div class="page" data-name="main_menu">
+        <div class="display-flex flex-direction-row w-100 justify-content-start position-fixed indicator">
+            <span class="indicator-container padding">
+                <div class="color-primary currency-indicator">
+                    <div class="indicator-media"><img src="../assets/images/coin-spin-small.png" alt="coin"/></div>
+                    <div class="indicator-label">0</div>
+                </div>
+            </span>
+        </div>
+        <div class="page-content no-padding-top">
+            <${Sketch} keyID=${key} sketch=${sketch}/>
+        </div>
+    </div>
+</template>
+<script>
+    import Sketch from '@/components/canvas/index.f7'
+    import sketch from '@/sketches/play.p5.js'
+    import jukebox from '../../js/utilities/jukebox.js'
+    export default (props, { $, $on, $f7router}) => {
+        var ost = jukebox['collections']
+        $on('pageInit', () => {
+            var instance = new window.p5(sketch, 'play')
+            ost.play()
+        })
+        $on('pageBeforeOut', () => {
+            ost.stop()
+        })
+        var value = 0
+        var mod = 1
+        var key = 'play'
+        return $render;
+    }
+</script>
