@@ -35,7 +35,6 @@
         var instance
         $onMounted(() => {
             instance = new window.p5(sketch, key)
-            console.log("🚀 ~ file: index.f7 ~ line 38 ~ $onMounted ~ instance", instance)
             instance._userNode = key
         })
         return $render

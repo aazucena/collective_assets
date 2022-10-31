@@ -17,6 +17,13 @@
   --f7-color-secondary-tint: #ffff85;
 }
 
+.color-primary {
+  --f7-theme-color: #4558ba;
+  --f7-theme-color-rgb: 69, 88, 186;
+  --f7-theme-color-shade: #3a4a9c;
+  --f7-theme-color-tint: #6373c5;
+}
+
 /* Your app custom styles here */
 .text-color-secondary {
   --f7-theme-color-text-color: var(--f7-color-secondary);
@@ -51,6 +58,46 @@
   --f7-navbar-text-color: white !important;
 }
 
+.indicator-container {
+  padding: var(--f7-typography-padding) !important;
+  width: 37.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  & > .currency-indicator {
+    --f7-chip-height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+  
+    & > .indicator-media {
+      display: flex;
+      flex-shrink: 1;
+      background-color: var(--f7-theme-color);
+      padding: 0.5rem;
+      margin-left: -0.25rem;
+      border-radius: 25% 0% 0% 25%;
+      & > img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    & > .indicator-label {
+      font-size: 1rem;
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      align-items: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-color: var(--f7-theme-color-tint);
+      border-radius: 0% 25% 25% 0;
+    }
+  }
+}
+
+
+
 .icon-button {
   width: initial;
   padding-top: 1.375rem !important;
@@ -77,8 +124,10 @@
   }
 }
 .navbar-inner.vertical {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  padding-right: 0.25rem !important;
   display: flex !important;
-  flex: 1 1 auto !important;
   justify-content: flex-start !important;
   flex-direction: column !important;
   flex-wrap: wrap !important;
@@ -94,52 +143,105 @@
   &.center-left {
     align-items: flex-start !important;
     justify-content: center !important;
+    & > .link-container  {
+      justify-content: flex-start !important;
+      & > .link {
+        margin-left: 1.25rem !important;
+      }
+    }
   }
   &.center-right {
     align-items: flex-end !important;
     justify-content: center !important;
+    & > .link-container  {
+      justify-content: flex-end !important;
+      & > .link {
+        margin-right: 1.25rem !important;
+      }
+    }
   }
   &.center {
-    justify-content: center !important;
+      justify-content: center !important;
   }
   &.left {
-    align-items: flex-start !important;
+    & > .link-container  {
+      & > .link {
+        margin-left: 1.25rem !important;
+      }
+      justify-content: flex-start !important;
+    }
   }
   &.right {
-    align-items: flex-start !important;
+    & > .link-container  {
+      & > .link {
+        margin-right: 1.25rem !important;
+      }
+      justify-content: flex-end !important;
+    }
   }
   &.bottom-left {
     align-items: flex-start !important;
     justify-content: flex-end !important;
+    & > .link-container  {
+      & > .link {
+        margin-left: 1.25rem !important;
+      }
+      justify-content: flex-start !important;
+    }
   }
   &.top-left {
     align-items: flex-start !important;
     justify-content: flex-start !important;
+    & > .link-container  {
+      & > .link {
+        margin-left: 1.25rem !important;
+      }
+      justify-content: flex-start !important;
+    }
   }
   &.top-right {
     align-items: flex-end !important;
     justify-content: flex-start !important;
+    & > .link-container  {
+      & > .link {
+        margin-right: 1.25rem !important;
+      }
+      justify-content: flex-end !important;
+    }
   }
   &.bottom-right {
     align-items: flex-end !important;
     justify-content: flex-end !important;
+    & > .link-container  {
+      & > .link {
+        margin-right: 1.25rem !important;
+      }
+      justify-content: flex-end !important;
+    }
+  }
+  & > .link-container  {
+    & > .link {
+      margin: .25rem !important;
+      margin-top: .25rem !important;
+      margin-bottom: .75rem !important;
+    }
   }
 }
-
+.link-container {
+  display: flex;
+  width: 100%;
+}
 .navbar.vertical {
-  z-index: 20 !important;
+  z-index: 500 !important;
+  width: 100%;
   height: 100%;
   display: flex !important;
-  flex: 1 1 auto !important;
   justify-content: flex-start !important;
   flex-direction: column !important;
   flex-wrap: wrap !important;
   flex-grow: 0 !important;
 }
 
-.navbar-inner.vertical > .link  {
-  padding: .5rem !important;
-}
 
 @for $i from 0 through 100 {
   .w-#{$i} {
@@ -166,6 +268,9 @@
   .vh-#{$i} {
     width: $i * 1vh !important;
   }
+  .level-#{$i} {
+    z-index: $i !important;
+  }
 }
 .w-auto {
   width: auto !important;
@@ -175,4 +280,21 @@
 }
 .w-initial {
   width: initial !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+.position-fixed {
+  &.indicator {
+    z-index: 25;
+  }
+  position: fixed;
 }

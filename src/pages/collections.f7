@@ -1,0 +1,69 @@
+<template>
+    <div class="page" data-name="collections" aria-hidden="true">
+        <div class="navbar no-shadow">
+            <div class="navbar-bg transparent"></div>
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link" href="/menu/">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only" @click=${toggleMute}>
+                        <i class="f7-icons" id="mute-collections">speaker_slash</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="grid-layout display-flex justify-content-center">
+                <div class="row w-100">
+                    <div class="col-33 resizable display-flex justify-content-center">
+                        <span>1</span>
+                    </div>
+                    <div class="col-33 resizable display-flex justify-content-center">
+                        <span>2</span>
+                    </div>
+                    <div class="col-33 resizable display-flex justify-content-center">
+                        <span>3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+    .col {
+        padding: 1rem;
+    }
+    .grid-layout {
+        --f7-grid-row-gap: 2rem;
+        padding: 0.75rem;
+    }
+    .page-content {
+        background-color: #1f203c !important;
+        color: white;
+    }
+</style>
+<script>
+    import jukebox from '../js/utilities/jukebox.js'
+    export default (props, { $on, $ }) => {
+        var ost = jukebox['collections']
+        var mute = false
+        $on('pageInit', () => {
+            ost.play()
+        })
+        $on('pageBeforeOut', () => {
+            ost.stop()
+        })
+        const toggleMute = () => {
+            mute = !mute
+            $('#mute-collections').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')
+            ost.mute(mute)
+        }
+        var value = 0
+        var mod = 1
+        var key = 'collections'
+        return $render;
+    }
+</script>

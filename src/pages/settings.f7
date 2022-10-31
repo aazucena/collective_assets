@@ -1,0 +1,64 @@
+<template>
+    <div class="page" data-name="settings" aria-hidden="true">
+        <div class="navbar no-shadow">
+            <div class="navbar-bg transparent"></div>
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link" href="/menu/">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only" @click=${toggleMute}>
+                        <i class="f7-icons" id="mute-settings">speaker_slash</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="list simple-list">
+                <ul>
+                    <li class="w-100 display-flex flex-direction-row justify-content-space-between">
+                        <div>Coins</div>
+                        <div>0</div>
+                    </li>
+                    <li class="w-100 display-flex flex-direction-row justify-content-space-between">
+                        <div>Coins</div>
+                        <div>0</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+    .page-content {
+        background-color: #1f203c !important;
+    }
+    .simple-list > ul > li {
+        background-color: var(--f7-theme-color) !important;
+        color: white;
+    }
+</style>
+<script>
+    import jukebox from '../js/utilities/jukebox.js'
+    export default (props, { $on, $ }) => {
+        var ost = jukebox['settings']
+        var mute = false
+        $on('pageInit', () => {
+            ost.play()
+        })
+        $on('pageBeforeOut', () => {
+            ost.stop()
+        })
+        const toggleMute = () => {
+            mute = !mute
+            $('#mute-settings').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')
+            ost.mute(mute)
+        }
+        var value = 0
+        var mod = 1
+        var key = 'settings'
+        return $render;
+    }
+</script>
