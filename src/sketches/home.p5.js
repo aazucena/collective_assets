@@ -205,7 +205,7 @@ export default (p5) => {
       buttonContainer.child(button)
       buttonContainer.class('w-100 display-flex flex-direction-row justify-content-center')
       buttonContainer.center()
-      buttonContainer.position(0, p5.height/2+100)
+      buttonContainer.position(0, (p5.height/2)+((p5.height/2) -378.5) + 38)
     }
     const titleText = () => {
       p5.textSize(42)
@@ -213,7 +213,7 @@ export default (p5) => {
       p5.textStyle(p5.BOLD)
       p5.textAlign(p5.CENTER)
       p5.fill(fontColorContrast('#1f203c'))
-      p5.text('Collective Assets', p5.width/2, p5.height/2 - 60)
+      p5.text('Collective Assets', p5.width/2, (p5.height/2) - 60)
     }
     const lights = () => {
       let min = vh + 75
@@ -232,6 +232,7 @@ export default (p5) => {
       let image = p5.createImg('../assets/images/city.svg', 'city')
       image.style('position', 'initial')
       image.style('opacity', 0.875)
+      image.class('w-100')
       let imageContainer = p5.createDiv()
       imageContainer.child(image)
       imageContainer.class('w-100 display-flex flex-direction-row justify-content-center align-items-flex-end')

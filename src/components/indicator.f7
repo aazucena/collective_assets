@@ -1,0 +1,13 @@
+<template>
+    <div class="indicator-container padding">
+        <div class="color-primary currency-indicator">
+            <div class="indicator-media"><img src="../assets/images/coin-spin-small.png" alt="coin"/></div>
+            <div class="indicator-label">0</div>
+        </div>
+    </div>
+</template>
+<script>
+    export default (props, { $, $on, $f7store}) => {
+        return $render
+    }
+</script>

@@ -1,12 +1,7 @@
 <template>
     <div class="page" data-name="main_menu">
         <div class="display-flex flex-direction-row w-100 justify-content-start position-fixed indicator">
-            <span class="indicator-container padding">
-                <div class="color-primary currency-indicator">
-                    <div class="indicator-media"><img src="../assets/images/coin-spin-small.png" alt="coin"/></div>
-                    <div class="indicator-label">0</div>
-                </div>
-            </span>
+            <${CurrencyIndicator} />
         </div>
         <div class="navbar no-shadow vertical level-40">
             <div class="navbar-bg transparent"></div>
@@ -45,6 +40,7 @@
 </template>
 <script>
 import Sketch from '@/components/canvas/index.f7'
+import CurrencyIndicator from '@/components/indicator.f7'
 import sketch from '@/sketches/main_menu.p5.js'
 import jukebox from '../js/utilities/jukebox.js'
 export default (props, { $on, $, $f7router }) => {

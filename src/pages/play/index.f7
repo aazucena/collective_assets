@@ -1,13 +1,18 @@
 <template>
 
-    <div class="page" data-name="main_menu">
-        <div class="display-flex flex-direction-row w-100 justify-content-start position-fixed indicator">
-            <span class="indicator-container padding">
-                <div class="color-primary currency-indicator">
-                    <div class="indicator-media"><img src="../assets/images/coin-spin-small.png" alt="coin"/></div>
-                    <div class="indicator-label">0</div>
-                </div>
-            </span>
+    <div class="page" data-name="play">
+        <div class="display-flex flex-direction-row w-100 align-items-center justify-content-space-between position-fixed indicator">
+            <div class="padding">
+                <a class="link" href="#" @click=${exit}>
+                    <i class="icon icon-back"></i>
+                </a>
+            </div>
+            <${CurrencyIndicator} />
+            <div class="padding">
+                <a href="#" class="link icon-only" @click=${toggleMute}>
+                    <i class="f7-icons" id="mute-play">speaker_slash</i>
+                </a>
+            </div>
         </div>
         <div class="page-content no-padding-top">
             <${Sketch} keyID=${key} sketch=${sketch}/>
@@ -16,17 +21,32 @@
 </template>
 <script>
     import Sketch from '@/components/canvas/index.f7'
+    import CurrencyIndicator from '@/components/indicator.f7'
     import sketch from '@/sketches/play.p5.js'
     import jukebox from '../../js/utilities/jukebox.js'
     export default (props, { $, $on, $f7router}) => {
         var ost = jukebox['collections']
+        var mute = false
         $on('pageInit', () => {
             var instance = new window.p5(sketch, 'play')
             ost.play()
+            ost.mute(mute)
         })
         $on('pageBeforeOut', () => {
             ost.stop()
         })
+        const exit = () => {
+            ost.stop()
+            $f7router.navigate(
+                { name: 'loading', path: '/loading/'}, 
+                { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
+            )
+        }
+        const toggleMute = () => {
+            mute = !mute
+            $('#mute-play').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')
+            ost.mute(mute)
+        }
         var value = 0
         var mod = 1
         var key = 'play'
