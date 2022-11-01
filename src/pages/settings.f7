@@ -21,11 +21,13 @@
                 <ul>
                     <li class="w-100 display-flex flex-direction-row justify-content-space-between">
                         <div>Coins</div>
-                        <div>0</div>
-                    </li>
-                    <li class="w-100 display-flex flex-direction-row justify-content-space-between">
-                        <div>Coins</div>
-                        <div>0</div>
+                        <div class="stepper stepper-fill stepper-init" data-autorepeat="true" data-autorepeat-dynamic="true">
+                            <div class="stepper-button-minus"></div>
+                            <div class="stepper-input-wrap">
+                                <input class="color-white" type="text" value=${currency} min="0" max="1000000" pattern="\d*" step="0.01" />
+                            </div>
+                            <div class="stepper-button-plus"></div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -47,6 +49,7 @@
 <script>
     import jukebox from '../js/utilities/jukebox.js'
     export default (props, { $on, $ }) => {
+        var currency = 0
         var ost = jukebox['settings']
         var mute = false
         $on('pageInit', () => {
