@@ -17,7 +17,6 @@ export default (props, { $, $f7router, $f7, $store, $on }) => {
         setTimeout(() => {
             $f7router.navigate(
                 { name: props.redirectName, path: props.redirectUrl },
-                { transition: 'f7-fade' }
             )
         }, 8 * 1000)
     })

@@ -6,6 +6,7 @@ import SettingsPage from '../pages/settings.f7';
 import CollectionsPage from '../pages/collections.f7';
 import HistoryPage from '../pages/history.f7';
 import PlayPage from '../pages/play/index.f7';
+import PlayResultPage from '../pages/play/result.f7';
 import NotFoundPage from '../pages/404.f7';
 
 var routes = [
@@ -38,6 +39,11 @@ var routes = [
     name: 'play',
     path: '/play/',
     component: PlayPage,
+  },
+  {
+    name: 'result',
+    path: '/result/',
+    component: PlayResultPage,
   },
   {
     name: 'history',

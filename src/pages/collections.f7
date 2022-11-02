@@ -17,18 +17,26 @@
         </div>
         <div class="page-content">
             <div class="block-title color-white">Asset Collections</div>
-            <div class="grid-layout display-flex justify-content-center">
-                <div class="row w-100">
-                    <div class="col-33 resizable display-flex justify-content-center">
-                        <span>1</span>
+            <div class="grid-layout display-flex flex-direction-column justify-content-center">
+                ${new Array(rows).fill(null).map((_, row) => $h`
+                    <div class="row w-100">
+                        ${((row * cols)+0) < size && $h`
+                            <div class="col-33 resizable display-flex justify-content-center">
+                                <${Asset} index=${((row * cols)+0)} item=${collections[((row * cols)+0)]} />
+                            </div>
+                        `}
+                        ${((row * cols)+1) < size && $h`
+                            <div class="col-33 resizable display-flex justify-content-center">
+                                <${Asset} index=${((row * cols)+1)} item=${collections[((row * cols)+1)]} />
+                            </div>
+                        `}
+                        ${((row * cols)+1) < size && $h`
+                            <div class="col-33 resizable display-flex justify-content-center">
+                                <${Asset} index=${((row * cols)+2)} item=${collections[((row * cols)+2)]} />
+                            </div>
+                        `}
                     </div>
-                    <div class="col-33 resizable display-flex justify-content-center">
-                        <span>2</span>
-                    </div>
-                    <div class="col-33 resizable display-flex justify-content-center">
-                        <span>3</span>
-                    </div>
-                </div>
+                `)}
             </div>
         </div>
     </div>
@@ -50,10 +58,23 @@
     }
 </style>
 <script>
+    import Asset from '@/components/asset.f7'
     import jukebox from '../js/utilities/jukebox.js'
-    export default (props, { $on, $ }) => {
+    export default (props, { $on, $, $store }) => {
+        var items = $store.getters.assets
+        var history = $store.getters.history
         var ost = jukebox['collections']
         var mute = false
+        var size = items.value.length
+        var cols = 3
+        var rows = Math.ceil(size/cols)
+        var historyItems = history.value.map((it) => ({ name: it.asset.data.name, rarity: it.asset.data.rarity.name, category: it.asset.data.category.name }))
+        var collections = items.value.map((item) => {
+            return {
+                ...item,
+                owned: historyItems.length > 0 && !!historyItems.find(hitem => hitem.name === item.name && hitem.category === item.category && hitem.rarity === item.rarity)
+            }
+        }).sort((a, b) => Number(b.owned) - Number(a.owned))
         $on('pageInit', () => {
             ost.play()
         })

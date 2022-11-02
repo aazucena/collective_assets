@@ -65,7 +65,7 @@ export default (p5) => {
           jukebox['main_menu'].stop()
           window.f7.views.main.router.navigate(
             { name: 'loading', path: '/loading/'}, 
-            { transition: 'f7-fade', props: { redirectName: 'play', redirectUrl: '/play/' } }
+            { props: { redirectName: 'play', redirectUrl: '/play/' } }
             )
           button.html(`<img src="../assets/images/chests/chest/chest@3x.png" alt="chest" style="max-width: 100%; height: auto;" />`)
           clearTimeout(timer)
@@ -83,11 +83,14 @@ export default (p5) => {
     let poker_table = p5.createImg("../assets/images/poker-table.png")
     poker_table.style('max-width', '100%')
     poker_table.style('height', 'auto')
+    poker_table.style('overflow', 'hidden')
+    poker_table.size(p5.width, p5.AUTO)
     poker_table.style('filter', 'sepia(25%) contrast(110%) saturate(60%) brightness(80%) opacity(85%)')
     let imgContainer = p5.createDiv()
     imgContainer.child(poker_table)
     imgContainer.class('w-100 display-flex flex-direction-row justify-content-center')
     imgContainer.center()
+    imgContainer.size(p5.AUTO, (p5.height/2))
     imgContainer.position(0, (p5.height/2))
   }
   const buttonName = () => {

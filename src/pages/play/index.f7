@@ -1,5 +1,4 @@
 <template>
-
     <div class="page" data-name="play">
         <div class="display-flex flex-direction-row w-100 align-items-center justify-content-space-between position-fixed indicator">
             <div class="padding">
@@ -39,7 +38,7 @@
             ost.stop()
             $f7router.navigate(
                 { name: 'loading', path: '/loading/'}, 
-                { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
+                { props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
             )
         }
         const toggleMute = () => {

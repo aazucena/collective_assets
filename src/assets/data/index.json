@@ -1,0 +1,642 @@
+{
+    "money": 20.00,
+    "history": [],
+    "categories": {
+        "phone": {
+            "icon": "phone_android"
+        },
+        "movies": {
+            "icon": "movie"
+        },
+        "boat": {
+            "icon": "directions_boat"
+        },
+        "car": {
+            "icon": "directions_car"
+        },
+        "airplane": {
+            "icon": "flight"
+        },
+        "book": {
+            "icon": "menu_book"
+        },
+        "drink": {
+            "icon": "local_bar"
+        },
+        "bag": {
+            "icon": "luggage"
+        },
+        "hat": {
+            "icon": "school"
+        },
+        "shoes": {
+            "icon": "roller_skating"
+        },
+        "computer": {
+            "icon": "computer"
+        },
+        "food": {
+            "icon": "lunch_dining"
+        },
+        "jewelry": {
+            "icon": "diamond"
+        },
+        "tools": {
+            "icon": "construction"
+        },
+        "video_game": {
+            "icon": "sports_esports"
+        },
+        "board_game": {
+            "icon": "casino"
+        },
+        "property": {
+            "icon": "house"
+        },
+        "business": {
+            "icon": "factory"
+        },
+        "outfit": {
+            "icon": "styler"
+        },
+        "shirt": {
+            "icon": "checkroom"
+        },
+        "paper": {
+            "icon": "article"
+        },
+        "psychedelic": {
+            "icon": "science"
+        },
+        "plant": {
+            "icon": "grass"
+        },
+        "piano": {
+            "icon": "piano"
+        },
+        "other": {
+            "icon": "question_mark"
+        }
+    },
+    "collections": [
+        {
+            "name": "iPhone",
+            "category": "phone",
+            "rarity": "common"
+        },
+        {
+            "name": "Nokia",
+            "category": "phone",
+            "rarity": "rare"
+        },
+        {
+            "name": "Blackberry",
+            "category": "phone",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Android",
+            "category": "phone",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Emoji The Movie",
+            "category": "movies",
+            "rarity": "common"
+        },
+        {
+            "name": "Wreck-It Ralph",
+            "category": "movies",
+            "rarity": "rare"
+        },
+        {
+            "name": "Superbad",
+            "category": "movies",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "The Room",
+            "category": "movies",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Kayak",
+            "category": "boat",
+            "rarity": "common"
+        },
+        {
+            "name": "Cruiser",
+            "category": "boat",
+            "rarity": "rare"
+        },
+        {
+            "name": "Yatch",
+            "category": "boat",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Brig",
+            "category": "boat",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Prius",
+            "category": "car",
+            "rarity": "common"
+        },
+        {
+            "name": "Mustang",
+            "category": "car",
+            "rarity": "rare"
+        },
+        {
+            "name": "Bugatti",
+            "category": "car",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Cybertruck",
+            "category": "car",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Paramotor",
+            "category": "airplane",
+            "rarity": "common"
+        },
+        {
+            "name": "Hot Air Balloon",
+            "category": "airplane",
+            "rarity": "rare"
+        },
+        {
+            "name": "Jet",
+            "category": "airplane",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Blackbird",
+            "category": "airplane",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Don't Ever Change",
+            "category": "book",
+            "rarity": "common"
+        },
+        {
+            "name": "Green Eggs and Ham",
+            "category": "book",
+            "rarity": "rare"
+        },
+        {
+            "name": "Life is Pi",
+            "category": "book",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Merriam-webster Dictionary",
+            "category": "book",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Vivino Red Wine",
+            "category": "drink",
+            "rarity": "common"
+        },
+        {
+            "name": "Absolut Vodka",
+            "category": "drink",
+            "rarity": "rare"
+        },
+        {
+            "name": "Jack Daniels",
+            "category": "drink",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Guinness Beer",
+            "category": "drink",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Duffel",
+            "category": "bag",
+            "rarity": "common"
+        },
+        {
+            "name": "Backpack",
+            "category": "bag",
+            "rarity": "rare"
+        },
+        {
+            "name": "Purse",
+            "category": "bag",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Satchel",
+            "category": "bag",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Sardines",
+            "category": "food",
+            "rarity": "common"
+        },
+        {
+            "name": "Salad",
+            "category": "food",
+            "rarity": "rare"
+        },
+        {
+            "name": "French Fries",
+            "category": "food",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Beef Wellington",
+            "category": "food",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Baseball",
+            "category": "hat",
+            "rarity": "common"
+        },
+        {
+            "name": "Snapback",
+            "category": "hat",
+            "rarity": "rare"
+        },
+        {
+            "name": "Fedora",
+            "category": "hat",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Cowboy",
+            "category": "hat",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Crocs",
+            "category": "shoes",
+            "rarity": "common"
+        },
+        {
+            "name": "Sneakers",
+            "category": "shoes",
+            "rarity": "rare"
+        },
+        {
+            "name": "High Heels",
+            "category": "shoes",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Jordans",
+            "category": "shoes",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Alienware",
+            "category": "computer",
+            "rarity": "common"
+        },
+        {
+            "name": "Mac",
+            "category": "computer",
+            "rarity": "rare"
+        },
+        {
+            "name": "Dell",
+            "category": "computer",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "ASUS",
+            "category": "computer",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Earrings",
+            "category": "jewelry",
+            "rarity": "common"
+        },
+        {
+            "name": "Bracelet",
+            "category": "jewelry",
+            "rarity": "rare"
+        },
+        {
+            "name": "Necklace",
+            "category": "jewelry",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Ring",
+            "category": "jewelry",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Hammer",
+            "category": "tools",
+            "rarity": "common"
+        },
+        {
+            "name": "Screwdriver",
+            "category": "tools",
+            "rarity": "rare"
+        },
+        {
+            "name": "Drill",
+            "category": "tools",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Saw",
+            "category": "tools",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Saints Row (2022)",
+            "category": "video_game",
+            "rarity": "common"
+        },
+        {
+            "name": "Clash of Kings",
+            "category": "video_game",
+            "rarity": "rare"
+        },
+        {
+            "name": "Last of Us",
+            "category": "video_game",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Spiderman (2022)",
+            "category": "video_game",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Monopoly",
+            "category": "board_game",
+            "rarity": "common"
+        },
+        {
+            "name": "Dungeons & Dragons",
+            "category": "board_game",
+            "rarity": "rare"
+        },
+        {
+            "name": "Cards Against Humanity",
+            "category": "board_game",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Life",
+            "category": "board_game",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Apartment",
+            "category": "property",
+            "rarity": "common"
+        },
+        {
+            "name": "Townhome",
+            "category": "property",
+            "rarity": "rare"
+        },
+        {
+            "name": "House",
+            "category": "property",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Mansion",
+            "category": "property",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Stand",
+            "category": "business",
+            "rarity": "common"
+        },
+        {
+            "name": "Convenience Store",
+            "category": "business",
+            "rarity": "rare"
+        },
+        {
+            "name": "Studio",
+            "category": "business",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Corporate Building",
+            "category": "business",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Banana Suit",
+            "category": "outfit",
+            "rarity": "common"
+        },
+        {
+            "name": "Jump Suit",
+            "category": "outfit",
+            "rarity": "rare"
+        },
+        {
+            "name": "Hazmat",
+            "category": "outfit",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Suit & tie",
+            "category": "outfit",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Tank top",
+            "category": "shirt",
+            "rarity": "common"
+        },
+        {
+            "name": "T-shirt",
+            "category": "shirt",
+            "rarity": "rare"
+        },
+        {
+            "name": "Sweatshirt",
+            "category": "shirt",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Polo",
+            "category": "shirt",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Banana",
+            "category": "paper",
+            "rarity": "common"
+        },
+        {
+            "name": "Sand",
+            "category": "paper",
+            "rarity": "rare"
+        },
+        {
+            "name": "Construction",
+            "category": "paper",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "book",
+            "category": "paper",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Meth",
+            "category": "psychedelic",
+            "rarity": "common"
+        },
+        {
+            "name": "Cocaine",
+            "category": "psychedelic",
+            "rarity": "rare"
+        },
+        {
+            "name": "Marijuana",
+            "category": "psychedelic",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Opiod",
+            "category": "psychedelic",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Weed",
+            "category": "plant",
+            "rarity": "common"
+        },
+        {
+            "name": "Bush",
+            "category": "plant",
+            "rarity": "rare"
+        },
+        {
+            "name": "Flower",
+            "category": "plant",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Tree",
+            "category": "plant",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Spinet",
+            "category": "piano",
+            "rarity": "common"
+        },
+        {
+            "name": "Console",
+            "category": "piano",
+            "rarity": "rare"
+        },
+        {
+            "name": "Electronic",
+            "category": "piano",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "Grand",
+            "category": "piano",
+            "rarity": "ultra_rare"
+        },
+        {
+            "name": "Red Bull",
+            "category": "other",
+            "rarity": "common"
+        },
+        {
+            "name": "1 Trillion Dollars of Fake Money",
+            "category": "other",
+            "rarity": "rare"
+        },
+        {
+            "name": "Genie Lamp",
+            "category": "other",
+            "rarity": "super_rare"
+        },
+        {
+            "name": "A feather that weighs a kilogramme of steel",
+            "category": "other",
+            "rarity": "ultra_rare"
+        }
+    ],
+    "rarity": {
+        "common": {
+            "chance": 0.6,
+            "color": "#A2B5CD",
+            "exchange": 1
+        },
+        "rare": {
+            "chance": 0.3,
+            "color": "#3399FF",
+            "exchange": 5
+        },
+        "super_rare": {
+            "chance": 0.075,
+            "color": "#6644FF",
+            "exchange": 10
+        },
+        "ultra_rare": {
+            "chance": 0.025,
+            "color": "#FFC23B",
+            "exchange": 25
+        }
+    },
+    "tally": {
+        "rarity": {
+            "common": 0,
+            "rare": 0,
+            "super_rare": 0,
+            "ultra_rare": 0,
+            "total": 0
+        },
+        "category": {
+            "phone": 0,
+            "movies":0,
+            "boat": 0,
+            "car": 0,
+            "airplane": 0,
+            "book": 0,
+            "drink": 0,
+            "bag": 0,
+            "hat": 0,
+            "shoes": 0,
+            "computer": 0,
+            "food": 0,
+            "jewelry": 0,
+            "tools": 0,
+            "video_game": 0,
+            "board_game": 0,
+            "property": 0,
+            "business": 0,
+            "outfit": 0,
+            "shirt": 0,
+            "paper": 0,
+            "psychedelic": 0,
+            "plant": 0,
+            "piano": 0,
+            "other": 0,
+            "total": 0
+        }
+    }
+}

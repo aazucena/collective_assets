@@ -1,0 +1,72 @@
+<template>
+    ${item.owned ? $h`
+        <div class="card ${item.rarity}">
+            <div class="card-content card-content-padding">
+                <div class="display-flex justify-content-center flex-direction-column w-100">
+                    <a class="link" style="color: black !important;">
+                        <i class="material-icons">${category.icon}</i>
+                    </a>
+                    <div class="text-align-center asset">
+                        ${name}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `: $h `
+    <div class="card" style="background-color: rgba(0, 0, 0, 0.25) !important; color: white !important;">
+        <div class="card-content">
+            <div class="display-flex justify-content-center flex-direction-column w-100">
+                <a class="link" style="color: white !important;">
+                    <i class="material-icons na">help_center</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    `}
+</template>
+<style>
+    .common {
+        background-color: #A2B5CD !important;
+        color: black !important;
+    }
+    .rare {
+        background-color: #3399FF !important;
+        color: black !important;
+    }
+    .super_rare {
+        background-color: #6644FF !important;
+        color: black !important;
+    }
+    .ultra_rare {
+        background-color: #FFC23B !important;
+        color: black !important;
+    }
+    .na {
+        font-size: 3rem !important;
+    }
+    .asset {
+        font-size: 0.75rem;
+        margin-top: 0.375rem;
+        color: black !important;
+    }
+    .bold {
+        font-weight: bold;
+    }
+</style>
+<script>
+    import _ from 'lodash'
+    import fontColorContrast from 'font-color-contrast'
+    export default (props, { $, $on, $store}) => {
+        var { index, item } = props
+        const rarities = $store.getters.rarity
+        const categories = $store.getters.categories
+        const rarity = rarities.value[item.rarity]
+        const category = categories.value[item.category]
+
+        var cat = _.startCase(item.category)
+        var rar = _.startCase(item.rarity.replace('_', ' '))
+        var name = item.name
+
+        return $render
+    }
+</script>

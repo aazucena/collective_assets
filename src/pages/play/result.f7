@@ -1,0 +1,20 @@
+<template>
+    <div class="page" data-name="result">
+        <div class="page-content no-padding-top">
+            <${Sketch} keyID=${key} sketch=${sketch}/>
+        </div>
+    </div>
+</template>
+<script>
+    import Sketch from '@/components/canvas/index.f7'
+    import sketch from '@/sketches/result.p5.js'
+    export default (props, { $, $on, $f7router}) => {
+        $on('pageInit', () => {
+            var instance = new window.p5(sketch, 'result')
+        })
+        var value = 0
+        var mod = 1
+        var key = 'result'
+        return $render;
+    }
+</script>

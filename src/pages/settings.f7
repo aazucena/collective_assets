@@ -24,7 +24,7 @@
                         <div class="stepper stepper-fill stepper-init" data-autorepeat="true" data-autorepeat-dynamic="true">
                             <div class="stepper-button-minus"></div>
                             <div class="stepper-input-wrap">
-                                <input class="color-white" type="text" value=${currency} min="0" max="1000000" pattern="\d*" step="0.01" />
+                                <input class="color-white" type="text" value=${money.value} min="0" max="1000000" pattern="\d*" step="0.01" />
                             </div>
                             <div class="stepper-button-plus"></div>
                         </div>
@@ -48,12 +48,21 @@
 </style>
 <script>
     import jukebox from '../js/utilities/jukebox.js'
-    export default (props, { $on, $ }) => {
-        var currency = 0
+    export default (props, { $on, $, $f7, $store }) => {
+        var money = $store.getters.money
+        var currentMoney = money.value
         var ost = jukebox['settings']
         var mute = false
         $on('pageInit', () => {
             ost.play()
+            var stepper = $f7.stepper.create({ 
+                el: '.stepper',
+                on: {
+                    change: (el, value) => {
+                        $store.dispatch('addMoney', value)
+                    }
+                }
+            })
         })
         $on('pageBeforeOut', () => {
             ost.stop()
@@ -63,6 +72,7 @@
             $('#mute-settings').text(mute === true ? 'speaker_slash_fill' : 'speaker_slash')
             ost.mute(mute)
         }
+
         var value = 0
         var mod = 1
         var key = 'settings'

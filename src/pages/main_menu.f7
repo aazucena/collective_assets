@@ -43,7 +43,8 @@ import Sketch from '@/components/canvas/index.f7'
 import CurrencyIndicator from '@/components/indicator.f7'
 import sketch from '@/sketches/main_menu.p5.js'
 import jukebox from '../js/utilities/jukebox.js'
-export default (props, { $on, $, $f7router }) => {
+export default (props, { $on, $, $f7router, $store }) => {
+    const money = $store.getters.money
     var ost = jukebox['main_menu']
     var mute = false
     $on('pageInit', () => {

@@ -196,7 +196,7 @@ export default (p5) => {
           jukebox['home'].stop()
           window.f7.views.main.router.navigate(
             { name: 'loading', path: '/loading/'}, 
-            { transition: 'f7-fade', props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
+            { props: { redirectName: 'main_menu', redirectUrl: '/menu/' } }
             )
         }
       })

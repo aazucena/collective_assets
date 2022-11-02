@@ -1,44 +1,27 @@
-import directus from './services.js'
-import Big from 'big.js'
+import fs from 'node:fs'
+import moment from 'moment'
+import _ from 'lodash'
+import data from '@/assets/data/index.json' 
 
-class GamblingSystem {
+export default class GamblingSystem {
     constructor() {
-        this.items =  [
-            "Ceremony",
-            "Collectivisation",
-            "Genre",
-            "Petal",
-            "Progenitor",
-            "Railway",
-            "Sophomore",
-            "Sustenance",
-            "Timber",
-            "Walk",
-            "Chandelier",
-            "Conception",
-            "Draw",
-            "Eaglet",
-            "Gateway",
-            "Ketch",
-            "Mustard",
-            "Pantsuit",
-            "Savory",
-            "Thermostat",
-        ]
-        this.rarity = {
-            "Common": 0.6,
-            "Rare": 0.3,
-            "Super Rare": 0.075,
-            "Ultra Rare": 0.025,
+        this.items =  data.collections
+        this.rarity = data.rarity
+        this.categories = data.categories
+        this.money = data.money
+        this.tally = data.tally
+        this.history = data.history
+    }
+    #initData = () => {
+        var json = {
+            money: this.money,
+            rarity: this.rarity,
+            categories: this.categories,
+            tally: this.tally,
+            history: this.history,
+            collections: this.items
         }
-        this.tally = {
-            "Common": 0,
-            "Rare": 0,
-            "Super Rare": 0,
-            "Ultra Rare": 0,
-            total: 0,
-        }
-        this.history = []
+        fs.writeFileSync('@/assets/data/index.json' , JSON.stringify(json, null, 2))
     }
     #pity = (value, total) => {
         var calc = (total/60) - 1
@@ -54,21 +37,51 @@ class GamblingSystem {
                 return val
         }
     }
-    
     roll = () => {
         var result;
         let i
         var sum = 0;
-        var chances = Object.entries(this.rarity);
-        var rand = Math.random() * (this.items.length - 0) + 0;
+        var chances = Object.entries(this.rarity)
+        var rand = Math.random() * (this.items.length - 0) + 0
         for (i = 0; i < chances.length; i++) {
-            var [key, chance] = chances[i]
-            sum += (chance * this.items.length)
-            if (this.#pity(rand, this.tally.total) <= sum) {
-                this.tally[key] += 1
-                this.tally.total += 1
-                result = `${key} ${this.items[Math.floor(rand)]}`
-                this.history.push({ item: this.items[Math.floor(rand)], rarity: key })
+            var [key, data] = chances[i]
+            sum += (data.chance * this.items.length)
+            if (this.#pity(rand, this.tally.rarity.total) <= sum) {
+            
+                var filteredItems = this.items.filter(it => it.rarity === key)
+                var item = filteredItems[Math.floor(rand) % filteredItems.length]
+                this.tally.rarity[key] += 1
+                this.tally.rarity.total += 1
+                var cat = item.category.split('_').map(s => _.startCase(s)).join(' ')
+                var rty = _.startCase(key)
+                var name = _.startCase(item.name)
+                result = {
+                    title: `${rty} ${cat}: ${name}`,
+                    data: {
+                        ...item, 
+                        category: {name: item.category, ...this.categories[item.category]},
+                        rarity: {name: item.rarity, ...this.rarity[item.rarity]},
+                    }
+                }
+                this.tally.category[item.category] += 1
+                this.tally.category.total += 1
+
+                
+                var historyItems = this.history
+                    .map((it) => ({ date: it.latest_date, name: it.asset.data.name, rarity: it.asset.data.rarity.name, category: it.asset.data.category.name }))
+
+                var exists = historyItems.length > 0 && !!historyItems.find((hitem) => {
+                    return hitem.name === item.name
+                        && hitem.rarity === item.rarity
+                        && hitem.category === item.category
+                })
+                if (exists) {
+                    money += this.rarity[item.rarity].exchange ?? 0
+                }
+                this.history.push({ 
+                    asset: result, 
+                    latest_date: moment().format('YYYY-MM-DD')
+                })
                 break
             } 
         }
@@ -86,8 +99,17 @@ class GamblingSystem {
         var rolls = new Array(limit).fill(null).map((_, index) => this.roll())
         return rolls
     }
-    getHistory = () => {
-        console.log(this.history)
+    pay = () => {
+        this.money -= 10
+    }
+    payTimes = (mod) => {
+        this.money -= (10 * mod)
+    }
+    addMoney = (mod) => {
+        this.money = mod
+    }
+    save = () => {
+        this.#initData()
     }
 }
 

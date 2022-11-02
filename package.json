@@ -47,6 +47,7 @@
     "howler": "^2.2.3",
     "lodash": "^4.17.21",
     "material-icons": "^1.12.0",
+    "moment": "^2.29.4",
     "p5": "^1.5.0",
     "skeleton-elements": "^4.0.1",
     "storybook-addon-designs": "^6.3.1",

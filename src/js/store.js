@@ -1,35 +1,74 @@
 
 import { createStore } from 'framework7'
 
+import GamblingSystem from './utilities/headers'
+
+const system = new GamblingSystem()
+
 const store = createStore({
   state: {
-    products: [
-      {
-        id: '1',
-        title: 'Apple iPhone 8',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis.'
-      },
-      {
-        id: '2',
-        title: 'Apple iPhone 8 Plus',
-        description: 'Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!'
-      },
-      {
-        id: '3',
-        title: 'Apple iPhone X',
-        description: 'Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum.'
-      },
-    ]
+    gambling_system: system,
+    result: []
   },
   getters: {
-    products({ state }) {
-      return state.products;
-    }
+    system({ state }) {
+      return state.gambling_system
+    },
+    history({ state }) {
+      return state.gambling_system.history
+    },
+    money({ state }) {
+      return state.gambling_system.money
+    },
+    assets({ state }) {
+      return state.gambling_system.items
+    },
+    tally({ state }) {
+      return state.gambling_system.tally
+    },
+    rarity({ state }) {
+      return state.gambling_system.rarity
+    },
+    categories({ state }) {
+      return state.gambling_system.categories
+    },
+    result({ state }) {
+      return state.result
+    },
   },
   actions: {
-    addProduct({ state }, product) {
-      state.products = [...state.products, product];
+    roll({ state }) {
+      state.result = state.gambling_system.roll()
+    },
+    empty({ state }) {
+      state.result = []
+    },
+    rollOne({ state }) {
+      state.result = state.gambling_system.rollOne()
+    },
+    rollTen({ state }) {
+      state.result = state.gambling_system.rollTen()
+    },
+    rollMultiple({ state }, limit) {
+      state.result = state.gambling_system.rollMultiple(limit)
+    },
+    addMoney({ state }, mod) {
+      state.gambling_system.addMoney(mod)
+      state.gambling_system = state.gambling_system
+    },
+    pay({ state }) {
+      state.gambling_system.pay()
+      state.gambling_system = state.gambling_system
+    },
+    payTimes({ state }, mod) {
+      state.gambling_system.payTimes(mod <= 0 ? 1 : mod)
+      state.gambling_system = state.gambling_system
+    },
+    save({ state }) {
+      state.gambling_system.save()
     },
   },
 })
+
+
 export default store;

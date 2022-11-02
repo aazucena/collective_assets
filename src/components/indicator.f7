@@ -2,12 +2,13 @@
     <div class="indicator-container padding">
         <div class="color-primary currency-indicator">
             <div class="indicator-media"><img src="../assets/images/coin-spin-small.png" alt="coin"/></div>
-            <div class="indicator-label">0</div>
+            <div class="indicator-label">${money.value.toFixed(2)}</div>
         </div>
     </div>
 </template>
 <script>
-    export default (props, { $, $on, $f7store}) => {
+    export default (props, { $, $on, $store}) => {
+        const money = $store.getters.money
         return $render
     }
 </script>
