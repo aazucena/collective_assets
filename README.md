@@ -65,18 +65,19 @@ There is a [Vite](https://vitejs.dev) bundler setup. It compiles and bundles all
 
 Cordova project located in `cordova` folder. You shouldn't modify content of `cordova/www` folder. Its content will be correctly generated when you call `npm run cordova-build-prod`.
 
-### Run Cordova through development build (Not minified)
+### Run Cordova through development build (Not minified) 
   ```bash
-    npm install
-    npm run cordova-add-android
-    npm run cordova-android
+    npm install # Install Dependencies
+    npm run cordova-add-android # Add Android Platform
+    npm run cordova-android # Generate development build & open on destined Android devlce (e.g. Emulator, Physical)
   ```
 ### Run Cordova through production build (Minified)
   ```bash
-    npm install
-    npm run cordova-add-android
-    npm run build-cordova-android
+    npm install # Install Dependencies
+    npm run cordova-add-android # Add Android Platform
+    npm run build-cordova-android # Generate production build to create an app-debug.apk file
   ```
+
 
 
 
