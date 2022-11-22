@@ -60,9 +60,23 @@ npm install
 ## Vite
 
 There is a [Vite](https://vitejs.dev) bundler setup. It compiles and bundles all "front-end" resources. You should work only with files located in `/src` folder. Vite config located in `vite.config.js`.
+
 ## Cordova
 
 Cordova project located in `cordova` folder. You shouldn't modify content of `cordova/www` folder. Its content will be correctly generated when you call `npm run cordova-build-prod`.
+
+### Run Cordova through development build (Not minified)
+  ```bash
+    npm install
+    npm run cordova-add-android
+    npm run cordova-android
+  ```
+### Run Cordova through production build (Minified)
+  ```bash
+    npm install
+    npm run cordova-add-android
+    npm run build-cordova-android
+  ```
 
 
 
